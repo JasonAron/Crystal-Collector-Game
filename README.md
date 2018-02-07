@@ -11,6 +11,7 @@ Click [here]( https://jasonaron.github.io/Crystal-Collector-Game/.) to see the l
 * RNG bound to crystals by click events.
 
 <h3>Design elements</h3>
+
 * Use of CSS and custom illustration to create an impactful experience. 
 
 * Sketched an illustration to match the theme of my game. 
@@ -20,6 +21,7 @@ Click [here]( https://jasonaron.github.io/Crystal-Collector-Game/.) to see the l
 * Created subtle animations on the crystals and text using CSS3.
 
 <h3>Game Rules</h3>
+
 * Random Number is generated at the start.
 
 * User clicks on crystals to add unknown points to score.
