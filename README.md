@@ -1,4 +1,4 @@
-<h1>Hangman-Game</h1>
+<h1>Crystal Collector</h1>
 
 Click [here](https://jasonaron.github.io/Hangman-Game/) to see the live game.
 
