@@ -1,0 +1,211 @@
+
+
+
+body {
+  background-color: #CECECE;
+}
+
+/*Blink Animation*/
+#blink_me {
+  animation: blinker 2s linear infinite;
+}
+
+@keyframes blinker {  
+  50% { opacity: 0; }
+}
+
+/*Floating Animatons*/
+
+.floating{
+  animation-name: floating;
+
+  animation-duration: 2.7s; 
+
+  animation-iteration-count: infinite;
+
+}
+
+@keyframes floating {
+  0% {
+    transform: translateY(0%);  
+  }
+  50% {
+    transform: translateY(12%);  
+  } 
+  100% {
+    transform: translateY(0%);
+  }     
+}
+
+
+.floating2{
+  animation-name: floating;
+
+  animation-duration: 2.5s; 
+
+  animation-iteration-count: infinite;
+
+}
+
+@keyframes floating {
+  0% {
+    transform: translateY(0%);  
+  }
+  50% {
+    transform: translateY(12%);  
+  } 
+  100% {
+    transform: translateY(0%);
+  }     
+}
+
+.floating3{
+  animation-name: floating;
+
+  animation-duration: 2.6s; 
+
+  animation-iteration-count: infinite;
+
+}
+
+@keyframes floating {
+  0% {
+    transform: translateY(0%);  
+  }
+  50% {
+    transform: translateY(12%);  
+  } 
+  100% {
+    transform: translateY(0%);
+  }     
+}
+
+.floating4{
+  animation-name: floating;
+
+  animation-duration: 2.8s; 
+
+  animation-iteration-count: infinite;
+
+}
+
+@keyframes floating {
+  0% {
+    transform: translateY(0%);  
+  }
+  50% {
+    transform: translateY(12%);  
+  } 
+  100% {
+    transform: translateY(0%);
+  }     
+}
+
+/*MP4 Background*/
+#bg-constraints {
+  width: 100%;
+  max-width: 980px;
+  margin: auto;
+  clear: both;
+}
+
+.flex {
+  display: flex;
+  justify-content: space-between;
+}
+
+.gems {
+  float: left;
+  flex: auto;
+  margin-top: -25px;
+  margin-left: 75px;
+  height: 200px;
+  width: 150px;
+}
+
+.shadow {
+  float: left;
+  flex: auto;
+  margin-left: 75px;
+  height: auto;
+  width: 150px; 
+}
+
+#bg {
+  width: 100%;
+  max-width: 980px;
+  position: absolute;
+  width: auto;
+  height: auto;
+  z-index: -1;
+}
+
+
+#masthead {
+  width: 100%;
+  overflow: auto;
+  margin-bottom: 50px;
+  padding-top: 50px;
+  color: #969696;
+  text-align: left;
+}
+
+.wrapper {
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+  clear: both;
+}
+
+
+
+h1, h2, h3, {
+    color: #969696;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 100;
+    text-transform: uppercase;
+    margin:5px 0;
+    text-align: center;
+}
+
+
+ p {
+  font-size: 18px;
+  color: #969696;
+  text-align: left;
+ }
+
+
+
+#wincount {
+  text-decoration-color: #969696;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 100;
+  text-transform: uppercase;
+  font-size: 24px;
+}
+
+#losscount {
+  text-decoration-color: #969696;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 100;
+  text-transform: uppercase;
+  font-size: 24px;
+}
+
+
+
+.container {
+    text-align: left;
+    color: #969696;
+    margin-top: 80px;
+}
+
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    color: #969696;
+    text-align: center;
+}
