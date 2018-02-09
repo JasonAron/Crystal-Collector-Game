@@ -33,24 +33,46 @@ var gameElements = {
 	targetNumber: 0,
 	playerNumber: 0,
 	
+	// Start
+	gameStart() {
+
+		// this.createCrystalNumbers();
+		var images = ["assets/images/Purple-2.png","assets/images/Green@2x.png","assets/images/Blue@2x.png","assets/images/Red@2x.png"]
+		for (var i = 0; i < 4; i++) {
+			var randomNumber = Math.floor(Math.random() * 12)
+			$(".crystals-container").append(`
+				<img class="gems floating" value=${randomNumber} src=${images[i]}></img>`)
+		}
+	},
 
 	// Increase Win
 	increaseWinCount() {
 		this.winCount++;
-	}	
+	},	
 	// Increase Loss
 	increaseLossCount() {
 		this.lossCount++;
-	}
+	},
 	// NewRandomNumber
 	NewTargetNumber() {
 		this.targetNumber = Math.floor((Math.random() * 102) + 19);
-	}
-	// Add points to players score
-	addPlayerPoints() {
-		this.playerNumber += ???;
-	}
+	},
+	// createCrystalNumbers() {
+	// 	var crystal1 = Math.floor(Math.random() * 12);
+	// 	var crystal2 = Math.floor(Math.random() * 12);
+	// 	var crystal3 = Math.floor(Math.random() * 12);
+	// 	var crystal4 = Math.floor(Math.random() * 12);
 
+	// 	$("#crystal1").attr("value", crystal1)
+	// 	$("#crystal2").attr("value", crystal2)
+	// 	$("#crystal3").attr("value", crystal3)
+	// 	$("#crystal4").attr("value", crystal4)
+
+	// },
+	// Add points to players score
+	addPlayerPoints(points) {
+		this.playerNumber += points;
+	},
 	// Did user Win
 	didUserWin() {
 		if (this.playerNumber === this.targetNumber) {
@@ -58,8 +80,7 @@ var gameElements = {
 		} else {
 			return false;
 		}
-	}
-
+	},
 	// Did user lose
 	didUserLose() {
 		if (this.playerNumber > this.targetNumber) {
@@ -67,43 +88,29 @@ var gameElements = {
 		} else {
 			return false;
 		}
-	}
+	},
 };
-
-
-// -------- Crystal Variables -------- 
-
-
-var crystal1 =
-var crystal2 =
-var crystal3 =
-var crystal4 =
 
 
 // -------- Game Controls -------- 
 
+$(".crystals-container").on("click", ".gems", function() {
+	console.log($(this).attr("value"))
+	})
 
-var gameControls = {
-
-	$("#crystal1").on("click", function() {
-	}
-	$("#crystal2").on("click", function() {
-	}
-	$("#crystal3").on("click", function() {
-	}
-	$("#crystal4").on("click", function() {
-	}	
 // On click
 // Specify what crystal was clicked
 // Add crystals points to counter
+
 // Did user win
 	// Restart Round
 	// wins++
 // Did user lose
 	//Restart round
 	//lose++
+	
 // Reset game.Elements	
-};
+
 
 
 // -------- View -------- 
@@ -114,7 +121,7 @@ var gameControls = {
 	// Players Score
 	// Random Number
 
-
+gameElements.gameStart();
 
 
 
