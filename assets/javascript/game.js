@@ -26,37 +26,101 @@
 //================================================
 
 
+//updates addition in html
+
 var gameElements = {
 
 	winCount: 0,
 	lossCount: 0,
 	targetNumber: 0,
 	playerNumber: 0,
-	
-	// Start
-	gameStart() {
 
-		// this.createCrystalNumbers();
+//==============================
+//--------- Start Game ---------
+//==============================
+
+	gameStart() {
 		var images = ["assets/images/Purple-2.png","assets/images/Green@2x.png","assets/images/Blue@2x.png","assets/images/Red@2x.png"]
 		for (var i = 0; i < 4; i++) {
 			var randomNumber = Math.floor(Math.random() * 12)
 			$(".crystals-container").append(`
 				<img class="gems floating" value=${randomNumber} src=${images[i]}></img>`)
+		newTargetNumber()
 		}
 	},
+}; 
 
-	// Increase Win
-	increaseWinCount() {
-		this.winCount++;
-	},	
-	// Increase Loss
-	increaseLossCount() {
-		this.lossCount++;
-	},
-	// NewRandomNumber
-	NewTargetNumber() {
-		this.targetNumber = Math.floor((Math.random() * 102) + 19);
-	},
+// Increase Win
+function increaseWinCount() {
+	 this.winCount++;
+}
+
+// Increase Loss
+function increaseLossCount() {
+	 this.lossCount++;
+}
+
+// NewRandomNumber
+function newTargetNumber() {
+	this.targetNumber = Math.floor((Math.random() * 102) + 19);
+}
+
+// Add points to players score
+function addPlayerPoints(points) {
+	this.playerNumber += points;
+}
+
+//Dryer Win Loss Count
+function winLossCount() {
+	if (this.playerNumber === this.targetNumber) {
+		increaseWinCount();
+		gameStart();
+	} else if (this.playerNumber > this.targetNumber) {
+		increaseLossCount();
+		gameStart();
+	}
+};
+
+
+
+
+// -------- Game Controls -------- 
+// On click the container and the content within the container...assign value to (this).
+$(".crystals-container").on("click", ".gems", function() {
+	console.log($(this).attr("value"))
+	})
+
+$("#wincount").text(gameElements.winCount);
+$("#losscount").text(gameElements.lossCount);
+$("#targetnumber").text(gameElements.targetNumber);
+$("#playerNumber").text(gameElements.playerNumber);
+
+gameElements.gameStart();
+
+
+//=============================
+//------- Saved Blocks --------
+//=============================
+
+	// // Did user Win
+	// didUserWin() {
+	// 	if (this.playerNumber === this.targetNumber) {
+	// 		return true;
+	// 	} else {
+	// 		return false;
+	// 	}
+	// },
+
+	// // Did user lose
+	// didUserLose() {
+	// 	if (this.playerNumber > this.targetNumber) {
+	// 		return true;
+	// 	} else {
+	// 		return false;
+	// 	}
+	// },
+
+
 	// createCrystalNumbers() {
 	// 	var crystal1 = Math.floor(Math.random() * 12);
 	// 	var crystal2 = Math.floor(Math.random() * 12);
@@ -69,63 +133,13 @@ var gameElements = {
 	// 	$("#crystal4").attr("value", crystal4)
 
 	// },
-	// Add points to players score
-	addPlayerPoints(points) {
-		this.playerNumber += points;
-	},
-	// Did user Win
-	didUserWin() {
-		if (this.playerNumber === this.targetNumber) {
-			return true;
-		} else {
-			return false;
-		}
-	},
-	// Did user lose
-	didUserLose() {
-		if (this.playerNumber > this.targetNumber) {
-			return true;
-		} else {
-			return false;
-		}
-	},
-};
 
-
-// -------- Game Controls -------- 
-
-$(".crystals-container").on("click", ".gems", function() {
-	console.log($(this).attr("value"))
-	})
-
-// On click
-// Specify what crystal was clicked
-// Add crystals points to counter
-
-// Did user win
-	// Restart Round
-	// wins++
-// Did user lose
-	//Restart round
-	//lose++
-	
-// Reset game.Elements	
-
-
-
-// -------- View -------- 
-
-
-	// Wins
-	// Loss
-	// Players Score
-	// Random Number
-
-gameElements.gameStart();
-
-
-
-
-
+	//	inputToBrowser() {
+// 		document.getElementById('wincount').innerHTML = winCount;
+// 		document.getElementById('losscount').innerHTML = lossCount;
+// 		document.getElementById('targetnumber').innerHTML = targetNumber;
+// 		document.getElementById('playernumber').innerHTML = playerNumber;
+// 	},
+// };
 
 
