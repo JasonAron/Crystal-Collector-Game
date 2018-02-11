@@ -28,6 +28,13 @@
 
 //updates addition in html
 
+var images = ["assets/images/Purple-2.png","assets/images/Green@2x.png","assets/images/Blue@2x.png","assets/images/Red@2x.png"]
+	for (var i = 0; i < 4; i++) {
+		var randomNumber = Math.floor(Math.random() * 12)
+		var floatClass = "floating" + i;
+		$(".crystals-container").append(`<img class="gems ${floatClass}" value=${randomNumber} src=${images[i]}></img>`)
+};
+
 var gameElements = {
 
 	winCount: 0,
@@ -35,52 +42,66 @@ var gameElements = {
 	targetNumber: 0,
 	playerNumber: 0,
 
+
 //==============================
 //--------- Start Game ---------
 //==============================
 
 	gameStart() {
-		var images = ["assets/images/Purple-2.png","assets/images/Green@2x.png","assets/images/Blue@2x.png","assets/images/Red@2x.png"]
-		for (var i = 0; i < 4; i++) {
-			var randomNumber = Math.floor(Math.random() * 12)
-			$(".crystals-container").append(`
-				<img class="gems floating" value=${randomNumber} src=${images[i]}></img>`)
-		newTargetNumber()
-		}
+		
+		this.playerNumber = 0;
+		$("#playernumber").text(this.playerNumber);
+
+		$("#wincount").text(this.winCount);
+
+		$("#losscount").text(this.lossCount);
+
+
+	newTargetNumber();
 	},
 }; 
 
+
 // Increase Win
 function increaseWinCount() {
-	 this.winCount++;
-}
+	 gameElements.winCount++;
+	 console.log("increaseWinCount was just called, the win count is " + gameElements.winCount)
+	 $("#wincount").text(gameElements.winCount);
+};
 
 // Increase Loss
 function increaseLossCount() {
-	 this.lossCount++;
-}
+	 gameElements.lossCount++;
+	 console.log("increaseLossCount was just called, the win count is " + gameElements.lossCount)
+	 $("#losscount").text(gameElements.lossCount);
+};
 
 // NewRandomNumber
 function newTargetNumber() {
-	this.targetNumber = Math.floor((Math.random() * 102) + 19);
-}
+	gameElements.targetNumber = Math.floor((Math.random() * 102) + 19);
+	console.log("newTargetNumber was just called, the newTargetNumber is " + gameElements.targetNumber)
+	$("#targetnumber").text(gameElements.targetNumber);
+
+};
 
 // Add points to players score
 function addPlayerPoints(points) {
-	this.playerNumber += points;
-}
+	gameElements.playerNumber += points;
+	console.log("addPlayerPoints was just called, insert points here " + gameElements.playerNumber)
+	$("#playernumber").text(gameElements.playerNumber);
+	winLossCount() 
+};
 
 //Dryer Win Loss Count
 function winLossCount() {
-	if (this.playerNumber === this.targetNumber) {
+	if (gameElements.playerNumber === gameElements.targetNumber) {
 		increaseWinCount();
-		gameStart();
-	} else if (this.playerNumber > this.targetNumber) {
+		gameElements.gameStart();
+	} else if (gameElements.playerNumber > gameElements.targetNumber) {
 		increaseLossCount();
-		gameStart();
+		gameElements.gameStart();
 	}
 };
-
 
 
 
@@ -88,12 +109,10 @@ function winLossCount() {
 // On click the container and the content within the container...assign value to (this).
 $(".crystals-container").on("click", ".gems", function() {
 	console.log($(this).attr("value"))
+	var value = $(this).attr("value");
+	var points = parseInt(value);
+	addPlayerPoints(points);
 	})
-
-$("#wincount").text(gameElements.winCount);
-$("#losscount").text(gameElements.lossCount);
-$("#targetnumber").text(gameElements.targetNumber);
-$("#playerNumber").text(gameElements.playerNumber);
 
 gameElements.gameStart();
 

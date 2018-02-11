@@ -16,7 +16,7 @@ body {
 
 /*Floating Animatons*/
 
-.floating{
+.floating0{
   animation-name: floating;
 
   animation-duration: 2.7s; 
@@ -38,7 +38,7 @@ body {
 }
 
 
-.floating2{
+.floating1{
   animation-name: floating;
 
   animation-duration: 2.5s; 
@@ -59,7 +59,7 @@ body {
   }     
 }
 
-.floating3{
+.floating2{
   animation-name: floating;
 
   animation-duration: 2.6s; 
@@ -80,7 +80,7 @@ body {
   }     
 }
 
-.floating4{
+.floating3{
   animation-name: floating;
 
   animation-duration: 2.8s; 
@@ -186,6 +186,22 @@ h1, h2, h3, {
 }
 
 #losscount {
+  text-decoration-color: #969696;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 100;
+  text-transform: uppercase;
+  font-size: 24px;
+}
+
+#targetnumber {
+  text-decoration-color: #969696;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 100;
+  text-transform: uppercase;
+  font-size: 24px;
+}
+
+#playernumber {
   text-decoration-color: #969696;
   font-family: 'Roboto', sans-serif;
   font-weight: 100;
