@@ -28,12 +28,7 @@
 
 //updates addition in html
 
-var images = ["assets/images/Purple-2.png","assets/images/Green@2x.png","assets/images/Blue@2x.png","assets/images/Red@2x.png"]
-	for (var i = 0; i < 4; i++) {
-		var randomNumber = Math.floor(Math.random() * 12)
-		var floatClass = "floating" + i;
-		$(".crystals-container").append(`<img class="gems ${floatClass}" value=${randomNumber} src=${images[i]}></img>`)
-};
+
 
 var gameElements = {
 
@@ -49,7 +44,10 @@ var gameElements = {
 
 	gameStart() {
 		
+
+
 		this.playerNumber = 0;
+
 		$("#playernumber").text(this.playerNumber);
 
 		$("#wincount").text(this.winCount);
@@ -57,10 +55,22 @@ var gameElements = {
 		$("#losscount").text(this.lossCount);
 
 
+	createCrystalNumbers();
 	newTargetNumber();
 	},
 }; 
 
+function createCrystalNumbers() {
+	var crystal1 = Math.floor(Math.random() * 12 + 1);
+	var crystal2 = Math.floor(Math.random() * 12 + 1);
+	var crystal3 = Math.floor(Math.random() * 12 + 1);
+	var crystal4 = Math.floor(Math.random() * 12 +);
+
+	$("#crystal1").attr("value", crystal1)
+	$("#crystal2").attr("value", crystal2)
+	$("#crystal3").attr("value", crystal3)
+	$("#crystal4").attr("value", crystal4)
+};
 
 // Increase Win
 function increaseWinCount() {
@@ -140,18 +150,7 @@ gameElements.gameStart();
 	// },
 
 
-	// createCrystalNumbers() {
-	// 	var crystal1 = Math.floor(Math.random() * 12);
-	// 	var crystal2 = Math.floor(Math.random() * 12);
-	// 	var crystal3 = Math.floor(Math.random() * 12);
-	// 	var crystal4 = Math.floor(Math.random() * 12);
 
-	// 	$("#crystal1").attr("value", crystal1)
-	// 	$("#crystal2").attr("value", crystal2)
-	// 	$("#crystal3").attr("value", crystal3)
-	// 	$("#crystal4").attr("value", crystal4)
-
-	// },
 
 	//	inputToBrowser() {
 // 		document.getElementById('wincount').innerHTML = winCount;
@@ -162,3 +161,9 @@ gameElements.gameStart();
 // };
 
 
+	// var images = ["assets/images/Purple-2.png","assets/images/Green@2x.png","assets/images/Blue@2x.png","assets/images/Red@2x.png"]
+	// 	for (var i = 0; i < 4; i++) {
+	// 		var randomNumber = Math.floor(Math.random() * 11 + 1)
+	// 		var floatClass = "floating" + i;
+	// 		$(".crystals-container").append(`<img class="gems ${floatClass}" value=${randomNumber} src=${images[i]}></img>`)
+	// }
