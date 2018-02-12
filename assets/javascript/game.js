@@ -65,7 +65,7 @@ function createCrystalNumbers() {
 	var crystal1 = Math.floor(Math.random() * 12 + 1);
 	var crystal2 = Math.floor(Math.random() * 12 + 1);
 	var crystal3 = Math.floor(Math.random() * 12 + 1);
-	var crystal4 = Math.floor(Math.random() * 12 +);
+	var crystal4 = Math.floor(Math.random() * 12 + 1);
 
 	$("#crystal1").attr("value", crystal1)
 	$("#crystal2").attr("value", crystal2)
