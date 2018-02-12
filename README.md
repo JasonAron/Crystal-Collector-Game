@@ -2,25 +2,23 @@
 
 Click [here]( https://jasonaron.github.io/Crystal-Collector-Game/.) to see the live game.
 
-<h2>Project</h2>
+<h2>Design</h2>
 
-<h3>Developement using Javascript, HTML5, CSS3</h3>
+* Animation - CSS3
 
-* Use of JQuery for game logic
+* Illustration - Crystals and background created using SketchApp.  
 
-* RNG bound to crystals by click events.
+<h2>Developement</h2>
 
-<h3>Design elements</h3>
+* HTML5
 
-* Use of CSS and custom illustration to create an impactful experience. 
+* CSS3
 
-* Sketched an illustration to match the theme of my game. 
+* JavaScript
 
-* Created a vector illustration in Sketchapp and convert to png.
+* JQuery
 
-* Created subtle animations on the crystals and text using CSS3.
-
-<h3>Game Rules</h3>
+<h2>Game Rules</h2>
 
 * Random Number is generated at the start.
 
