@@ -144,10 +144,16 @@ body {
 #masthead {
   width: 100%;
   overflow: auto;
-  margin-bottom: 50px;
-  padding-top: 50px;
+  margin-bottom: 35px;
+  padding-top: 25px;
   color: #969696;
-  text-align: left;
+  text-align: center;
+}
+
+.main-section {
+  margin-bottom: 15px;
+  width: 100%;
+  max-width: 620px;
 }
 
 .wrapper {
@@ -210,11 +216,10 @@ h1, h2, h3, {
 }
 
 
-
 .container {
     text-align: left;
     color: #969696;
-    margin-top: 80px;
+    margin-top: 30px;
 }
 
 .footer {
