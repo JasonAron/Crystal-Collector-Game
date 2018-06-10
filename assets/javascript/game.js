@@ -30,6 +30,7 @@
 
 
 
+$("#myaudio").prop("volume", 0.1);
 
 var gameElements = {
 
@@ -38,7 +39,7 @@ var gameElements = {
 	targetNumber: 0,
 	playerNumber: 0,
 
-
+	
 //==============================
 //--------- Start Game ---------
 //==============================
